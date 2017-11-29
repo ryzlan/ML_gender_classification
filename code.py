@@ -46,3 +46,8 @@ print('Random Forest : {} '.format(acc_RF))
 pred_knn = clf_Knn.predict(X)
 acc_knn = accuracy_score(Y,pred_knn) *100
 print('KNN : {} '.format(acc_knn))
+
+#best classifiers
+arr = np.argmax([acc_SVC,acc_tree,acc_knn,acc_RF])
+clas={0:'SVM', 1:'DecisionTree' , 2:'KNN' ,3:'Random Forest'}
+print('Best gender classifier is {}'.format(clas[arr]))
